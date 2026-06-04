@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Breath Kochi – Evidence-Based Air Quality Awareness</title>
+<title>Breath Kochi – Air Quality Awareness</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #222; }
@@ -12,6 +12,7 @@
   main { padding: 10px; max-width: 1000px; margin: 0 auto; }
   section { padding: 15px 20px; margin: 10px 0; background: white; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
   h2 { color: #0a3d62; margin-top: 0; }
+  h3 { color: #0a3d62; margin-top: 0; font-size: 1rem; }
   .two-column { display: flex; flex-wrap: wrap; gap: 15px; }
   .col { flex: 1 1 250px; }
   .img-block img { max-width: 100%; border-radius: 10px; }
@@ -19,19 +20,20 @@
   .limits-table th, .limits-table td { border: 1px solid #ddd; padding: 6px 8px; text-align: center; }
   .limits-table th { background: #e8f2ff; }
   ul { padding-left: 18px; }
-  .footer { text-align: center; padding: 20px; color: #555; font-size: 0.85rem; }
-  canvas { max-width: 100%; }
   .info-box { background:#dff0ff; border-left:6px solid #0077cc; }
   .impact-box { background:#e8f7f0; }
   .future-box { background:#fff3cd; }
+  .footer { text-align: center; padding: 20px; color: #555; font-size: 0.85rem; }
+  canvas { max-width: 100%; }
+  .qr { text-align:center; }
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Breath Kochi – Live Air Quality & PM2.5 Awareness</h1>
-  <p>Ernakulam AQI • Health Effects • Actions • Future Vision</p>
+  <h1>Breath Kochi – Live AQI & PM2.5 Awareness</h1>
+  <p>By Amala Xavier • Aerosol & Inhalation Scientist</p>
 </header>
 
 <main>
@@ -41,20 +43,23 @@
   <div class="col">
     <h2>Why This Page Exists</h2>
     <p>
-      Kochi’s air carries invisible particles like PM2.5 that affect our lungs, heart, brain, and future climate.
+      Kochi’s air carries invisible particles like PM2.5 that affect our lungs, heart, brain, and climate.
       This page connects <strong>live AQI data</strong> with clear explanations, health impacts, and practical actions
-      so residents, students, and decision-makers can act on evidence.
+      so citizens can make informed choices every day.
     </p>
   </div>
   <div class="col img-block">
-    <img src="images/kochicity-banner.jpg" alt="Kochi city skyline with haze">
+    <img src="images/kochicity-banner.png" alt="Cartoon-style illustration of Kochi city with light haze">
   </div>
 </section>
 
 <!-- LIVE AQI -->
-<section class="aqi-box">
+<section>
   <h2>Live AQI – Ernakulam</h2>
-  <iframe src="https://www.aqi.in/dashboard/india/kerala/ernakulam" height="380"></iframe>
+  <p style="font-size:0.9rem;">Source: AQI.in – PM2.5, PM10 and other pollutants</p>
+  <iframe src="https://www.aqi.in/dashboard/india/kerala/ernakulam"
+          height="380"
+          style="width:100%;border:none;border-radius:10px;"></iframe>
 </section>
 
 <!-- WHAT IS PM2.5 -->
@@ -71,7 +76,7 @@
     </p>
   </div>
   <div class="col img-block">
-    <img src="images/pm25-microscopic.jpg" alt="Microscopic view of PM2.5 particles">
+    <img src="images/pm25-microscopic.png" alt="Cartoon-style microscopic view of PM2.5 particles">
   </div>
 </section>
 
@@ -89,21 +94,39 @@
       <p>PM2.5 is so small that it can bypass the nose and throat and reach deep into the lungs.</p>
     </div>
     <div class="col img-block">
-      <img src="images/size-comparison-hair-pm10-pm25.png" alt="Size comparison of human hair, PM10 and PM2.5">
+      <img src="images/size-comparison-hair-pm10-pm25.png" alt="Infographic comparing hair, PM10 and PM2.5 sizes">
     </div>
   </div>
 </section>
 
-<!-- LIMITS -->
+<!-- WHO VS INDIA LIMITS -->
 <section>
-  <h2>PM2.5 & PM10 – WHO vs Indian Limits</h2>
+  <h2>WHO vs Indian Standards for PM2.5</h2>
   <table class="limits-table">
-    <tr><th>Pollutant</th><th>Duration</th><th>WHO Guideline</th><th>Indian Standard</th></tr>
+    <tr><th>Pollutant</th><th>Duration</th><th>WHO Guideline</th><th>Indian Standard (NAAQS)</th></tr>
     <tr><td>PM2.5</td><td>Annual</td><td>5 µg/m³</td><td>40 µg/m³</td></tr>
     <tr><td>PM2.5</td><td>24-hour</td><td>15 µg/m³</td><td>60 µg/m³</td></tr>
-    <tr><td>PM10</td><td>Annual</td><td>15 µg/m³</td><td>60 µg/m³</td></tr>
-    <tr><td>PM10</td><td>24-hour</td><td>45 µg/m³</td><td>100 µg/m³</td></tr>
   </table>
+  <p style="font-size:0.9rem;margin-top:8px;">
+    WHO limits are much stricter than Indian standards. Many Indian cities, including Kochi, often exceed WHO guidelines.
+  </p>
+</section>
+
+<!-- CIGARETTE EQUIVALENT -->
+<section class="info-box">
+  <h2>PM2.5 and “Cigarette Equivalent”</h2>
+  <p>
+    To make air pollution more relatable, some studies compare daily PM2.5 exposure to “cigarettes per day”.
+    Exact numbers vary, but a rough idea:
+  </p>
+  <ul>
+    <li><strong>PM2.5 around 22–25 µg/m³ (24h)</strong> ≈ breathing the smoke of about <strong>1 cigarette per day</strong>.</li>
+    <li><strong>Higher PM2.5</strong> for many days can add up to the equivalent of smoking many cigarettes over a year.</li>
+  </ul>
+  <p style="font-size:0.9rem;">
+    This does not mean you are literally smoking, but it shows how serious long-term exposure can be.
+    Reducing PM2.5 protects lungs and heart just like avoiding cigarettes.
+  </p>
 </section>
 
 <!-- HEALTH IMPACTS -->
@@ -111,7 +134,7 @@
   <div class="col">
     <h2>Health Impacts of PM2.5</h2>
     <ul>
-      <li><strong>Lungs:</strong> Breathing difficulty, asthma attacks, reduced lung growth in children.</li>
+      <li><strong>Lungs:</strong> Asthma attacks, chronic cough, reduced lung growth in children.</li>
       <li><strong>Heart:</strong> Higher risk of heart attack, stroke, high blood pressure.</li>
       <li><strong>Brain:</strong> Headache, fatigue, reduced concentration; long-term links to dementia.</li>
       <li><strong>Pregnancy:</strong> Low birth weight, preterm birth, complications.</li>
@@ -119,7 +142,7 @@
     </ul>
   </div>
   <div class="col img-block">
-    <img src="images/pm25-health-impacts-body.png" alt="Diagram showing PM2.5 impacts on lungs, heart, brain and pregnancy">
+    <img src="images/pm25-health-impacts-body.png" alt="Illustrated human body showing PM2.5 impacts on organs">
   </div>
 </section>
 
@@ -127,16 +150,17 @@
 <section class="two-column">
   <div class="col">
     <h2>Pollution Hotspots – Kochi Region</h2>
+    <p>Traffic corridors, industrial areas, and construction zones often show higher PM2.5 and PM10 levels.</p>
     <ul>
       <li>Kalamassery & Eloor – industrial belt</li>
       <li>Edappally & Vyttila – traffic junctions</li>
       <li>MG Road – commercial corridor</li>
       <li>Container Road – heavy truck movement</li>
-      <li><strong>Kakkanad – IT hub, traffic congestion, and construction dust (major PM2.5 hotspot)</strong></li>
+      <li>Kakkanad – IT hub, traffic congestion, construction dust</li>
     </ul>
   </div>
   <div class="col img-block">
-    <img src="images/kochihotspots-map.png" alt="Map showing PM2.5 hotspots in Kochi including Kakkanad">
+    <img src="images/kochihotspots-map.png" alt="Cartoon-style map showing Kochi hotspots including Kakkanad">
   </div>
 </section>
 
@@ -145,13 +169,205 @@
   <h2>Smart Solutions for Cleaner Kochi</h2>
   <div class="two-column">
     <div class="col">
-      <h3>Transport Control</h3>
+      <h3>Transport & Traffic</h3>
       <ul>
-        <li>Phased reduction of old vehicles</li>
-        <li>Introduce clean air zones</li>
-        <li>KSRTC electric buses</li>
-        <li>No idling (>60 sec)</li>
-        <li>Stricter PUC</li>
+        <li>Phase out old, high-emission vehicles.</li>
+        <li>Create clean air zones around schools and hospitals.</li>
+        <li>Promote electric buses and shared mobility.</li>
+        <li>Discourage idling (>60 seconds) at junctions.</li>
+        <li>Stricter and regular PUC checks.</li>
       </ul>
     </div>
-    <
+    <div class="col">
+      <h3>Urban Planning & Industry</h3>
+      <ul>
+        <li>Better road maintenance to reduce dust.</li>
+        <li>Emission controls in industrial belts.</li>
+        <li>More AQI monitoring stations across Kochi.</li>
+        <li>Green buffers near busy roads.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT INDIVIDUALS CAN DO -->
+<section>
+  <h2>What Can Individuals Do?</h2>
+  <div class="two-column">
+    <div class="col">
+      <ul>
+        <li>Use public transport or carpool instead of solo driving.</li>
+        <li>Avoid burning waste, leaves, or plastic.</li>
+        <li>Maintain vehicles regularly to reduce emissions.</li>
+        <li>Install <strong>HEPA filters</strong> in home air purifiers and HVAC systems.</li>
+        <li>Use <strong>HEPA cabin filters</strong> in cars to reduce exposure while commuting.</li>
+        <li>Check AQI before outdoor activities and plan your day accordingly.</li>
+        <li>Wear <strong>N95 masks</strong> on high pollution days.</li>
+        <li>Plant and care for native trees in your neighbourhood.</li>
+        <li>Encourage schools and offices to monitor indoor air quality.</li>
+      </ul>
+    </div>
+    <div class="col img-block">
+      <img src="images/actions-icons.png" alt="Icons of bus, mask, HEPA filter, tree and AQI app">
+    </div>
+  </div>
+</section>
+
+<!-- INDOOR AIR QUALITY -->
+<section class="impact-box">
+  <h2>Clean Air Starts Indoors</h2>
+  <ul>
+    <li>Use HEPA-based air purifiers in bedrooms and living rooms.</li>
+    <li>Ensure good ventilation when outdoor AQI is moderate or better.</li>
+    <li>Keep windows closed on very high pollution days.</li>
+    <li>Avoid incense, indoor smoking, and frequent use of strong chemical sprays.</li>
+    <li>Regularly clean filters in AC and purifiers.</li>
+  </ul>
+</section>
+
+<!-- ALGAE BIOREACTOR -->
+<section class="future-box">
+  <h2>What is an Algae Bioreactor?</h2>
+  <div class="two-column">
+    <div class="col">
+      <p>
+        An <strong>algae bioreactor</strong> is a closed, transparent chamber where microalgae grow using
+        light, water, and carbon dioxide (CO₂). These tiny organisms naturally absorb CO₂ from the air and
+        release oxygen through photosynthesis.
+      </p>
+      <ul>
+        <li><strong>Closed & safe:</strong> No algae escape; no smell; no contamination.</li>
+        <li><strong>CO₂ capture:</strong> Algae absorb CO₂ from indoor or outdoor air.</li>
+        <li><strong>O₂ release:</strong> Clean oxygen is returned to the environment.</li>
+        <li><strong>Low energy:</strong> Works mainly on sunlight or LED light.</li>
+        <li><strong>Nature-based:</strong> Uses the same mechanism as trees – photosynthesis.</li>
+      </ul>
+      <p>
+        Algae bioreactors are used in research labs and green buildings to demonstrate how nature-based
+        solutions can support cleaner air and climate action.
+      </p>
+    </div>
+    <div class="col img-block">
+      <img src="images/algae-bioreactor-diagram.png" alt="Cartoon-style diagram of an algae bioreactor with CO2 in and oxygen out">
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE VISION -->
+<section class="future-box two-column">
+  <div class="col">
+    <h2>Future Vision for Kochi 2030</h2>
+    <ul>
+      <li>More trees and urban green corridors.</li>
+      <li>Electric buses and cleaner public transport.</li>
+      <li>Cycling lanes and walkable streets.</li>
+      <li>Cleaner industries with emission controls.</li>
+      <li>More AQI monitoring stations across the city.</li>
+    </ul>
+  </div>
+  <div class="col img-block">
+    <img src="images/future-kochi-2030.png" alt="Illustration of a cleaner, greener Kochi with buses, trees and cyclists">
+  </div>
+</section>
+
+<!-- SIMPLE PM2.5 TREND CHART (EXAMPLE) -->
+<section>
+  <h2>PM2.5 Trend – Example Week</h2>
+  <p style="font-size:0.9rem;">This sample chart shows how PM2.5 can change across days. Replace with real data when available.</p>
+  <canvas id="pmChart" height="200"></canvas>
+</section>
+
+<!-- QR -->
+<section class="qr">
+  <h2>Scan to View Breath Kochi Website</h2>
+  <img src="images/qr-breathkochi.png" alt="QR code linking to Breath Kochi website" style="max-width:180px;">
+  <p style="font-size:0.85rem; margin-top:10px;">
+    Use your phone camera to scan and open the Breath Kochi page with live AQI and actions.
+  </p>
+</section>
+
+<!-- ABOUT THE SCIENTIST -->
+<section style="background:#e8f7f0; border-radius:10px; margin:20px 0; padding:20px;">
+  <div class="two-column">
+    <div class="col">
+      <h2>About the Scientist</h2>
+      <p>
+        <strong>Amala Xavier</strong><br>
+        Aerosol & Inhalation Scientist<br>
+        Passionate about clean air, respiratory health, and sustainable innovation. Through <em>Breath Kochi</em>,
+        Amala combines environmental science and public awareness to make air quality data accessible and actionable
+        for every citizen.
+      </p>
+    </div>
+    <div class="col img-block">
+      <img src="images/amala-portrait.png" alt="Cartoon-style portrait illustration of Amala Xavier">
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section>
+  <h2>References</h2>
+  <ul>
+    <li>WHO Air Quality Guidelines (2021)</li>
+    <li>CPCB National Ambient Air Quality Standards (NAAQS)</li>
+    <li>AQI.in / WAQI live data dashboards</li>
+    <li>Peer-reviewed studies on PM2.5 health impacts and cigarette-equivalent exposure</li>
+  </ul>
+</section>
+
+</main>
+
+<!-- SIMPLE PM2.5 TREND CHART SCRIPT -->
+<script>
+  const canvas = document.getElementById('pmChart');
+  const ctx = canvas.getContext('2d');
+  const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  const values = [35, 52, 78, 60, 90, 110, 70]; // example µg/m³
+  const maxValue = Math.max(...values, 120);
+  const padding = 30;
+  const width = canvas.width;
+  const height = canvas.height;
+  const barWidth = (width - 2 * padding) / values.length * 0.6;
+  const gap = (width - 2 * padding) / values.length * 0.4;
+
+  function drawChart() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.font = '10px Arial';
+    ctx.textAlign = 'center';
+
+    ctx.beginPath();
+    ctx.moveTo(padding, 10);
+    ctx.lineTo(padding, height - padding);
+    ctx.lineTo(width - padding, height - padding);
+    ctx.strokeStyle = '#555';
+    ctx.stroke();
+
+    values.forEach((v, i) => {
+      const x = padding + i * (barWidth + gap) + gap / 2;
+      const barHeight = (v / maxValue) * (height - 2 * padding);
+      const y = height - padding - barHeight;
+
+      let color = '#2ecc71';
+      if (v > 50 && v <= 100) color = '#f1c40f';
+      else if (v > 100 && v <= 150) color = '#e67e22';
+      else if (v > 150 && v <= 200) color = '#c0392b';
+      else if (v > 200) color = '#6c3483';
+
+      ctx.fillStyle = color;
+      ctx.fillRect(x, y, barWidth, barHeight);
+
+      ctx.fillStyle = '#000';
+      ctx.fillText(labels[i], x + barWidth / 2, height - padding + 12);
+    });
+  }
+
+  drawChart();
+</script>
+
+<div class="footer">
+  <p>Breath Kochi © 2026 • Created by <strong>Amala Xavier</strong>, Aerosol & Inhalation Scientist</p>
+</div>
+
+</body>
+</html>

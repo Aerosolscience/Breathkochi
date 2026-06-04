@@ -52,170 +52,149 @@
     </p>
 </section>
 
+<!-- WHAT IS PM2.5 -->
+<section style="padding:20px; background:#f5f5f5; border-radius:10px; margin:20px 0;">
+  <h2>What is PM2.5?</h2>
+  <p>
+    PM2.5 refers to fine inhalable particles with a diameter of <strong>2.5 micrometers or smaller</strong>.
+    These particles are about <strong>30 times smaller than a human hair</strong> and can travel deep into the lungs.
+  </p>
+  <p>
+    Because of their tiny size, PM2.5 can enter the bloodstream and affect the lungs, heart, and brain.
+    The World Health Organization identifies PM2.5 as one of the most harmful air pollutants.
+  </p>
+</section>
+
+<!-- DID YOU KNOW -->
+<section style="padding:20px; background:#dff0ff; border-left:6px solid #0077cc; border-radius:10px; margin:20px 0;">
+  <h2>Did You Know?</h2>
+  <ul>
+    <li>PM2.5 is one of the deadliest forms of air pollution.</li>
+    <li>It can travel deep into the lungs and bloodstream.</li>
+    <li>Long-term exposure increases risk of heart and lung diseases.</li>
+    <li>Children breathe faster and inhale more PM2.5 per body weight.</li>
+  </ul>
+</section>
+
+<!-- SIZE COMPARISON -->
+<section style="padding:20px; background:#fff3cd; border-radius:10px; margin:20px 0;">
+  <h2>How Small is PM2.5?</h2>
+  <ul>
+    <li>Human hair: ~70 micrometers</li>
+    <li>Sand grain: ~90 micrometers</li>
+    <li>PM10: 10 micrometers</li>
+    <li><strong>PM2.5: 2.5 micrometers</strong></li>
+  </ul>
+</section>
+
 <!-- HOTSPOT MAP -->
 <section class="map-box">
     <h2>Pollution Hotspots – Kochi Region</h2>
     <p style="font-size:0.9rem;">
         Traffic corridors, industrial areas, and construction zones often show higher PM2.5 and PM10 levels.
     </p>
-    <!-- Simple Google Maps embed centred near Kochi/Ernakulam -->
-    <iframe
-        height="320"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
+    <iframe height="320" loading="lazy" allowfullscreen
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.726384812493!2d76.282!3d9.9816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d3c7f3c7c7f%3A0x4f4f4f4f4f4f4f4f!2sErnakulam!5e0!3m2!1sen!2sin!4v1700000000000">
     </iframe>
-    <p style="font-size:0.85rem; margin-top:8px;">
-        Use this map to identify busy roads and industrial belts—areas where air pollution is usually higher.
-    </p>
 </section>
 
 <!-- PM2.5 TREND -->
 <section class="chart-box">
     <h2>PM2.5 Trend – Example Week</h2>
-    <p style="font-size:0.9rem;">
-        This sample chart shows how PM2.5 can change across days. Replace with real data when available.
-    </p>
     <canvas id="pmChart" height="200"></canvas>
 </section>
 
-<!-- LIMITS: WHO vs INDIA -->
+<!-- LIMITS -->
 <section>
     <h2>PM2.5 & PM10 – WHO vs Indian Limits</h2>
-    <p style="font-size:0.9rem;">
-        Long-term exposure above these limits increases the risk of heart disease, stroke, lung cancer, and childhood asthma.
-    </p>
     <table class="limits-table">
-        <tr>
-            <th>Pollutant</th>
-            <th>Duration</th>
-            <th>WHO Guideline</th>
-            <th>Indian Standard (NAAQS)</th>
-        </tr>
-        <tr>
-            <td>PM2.5</td>
-            <td>Annual</td>
-            <td>5 µg/m³</td>
-            <td>40 µg/m³</td>
-        </tr>
-        <tr>
-            <td>PM2.5</td>
-            <td>24-hour</td>
-            <td>15 µg/m³</td>
-            <td>60 µg/m³</td>
-        </tr>
-        <tr>
-            <td>PM10</td>
-            <td>Annual</td>
-            <td>15 µg/m³</td>
-            <td>60 µg/m³</td>
-        </tr>
-        <tr>
-            <td>PM10</td>
-            <td>24-hour</td>
-            <td>45 µg/m³</td>
-            <td>100 µg/m³</td>
-        </tr>
+        <tr><th>Pollutant</th><th>Duration</th><th>WHO Guideline</th><th>Indian Standard</th></tr>
+        <tr><td>PM2.5</td><td>Annual</td><td>5 µg/m³</td><td>40 µg/m³</td></tr>
+        <tr><td>PM2.5</td><td>24-hour</td><td>15 µg/m³</td><td>60 µg/m³</td></tr>
+        <tr><td>PM10</td><td>Annual</td><td>15 µg/m³</td><td>60 µg/m³</td></tr>
+        <tr><td>PM10</td><td>24-hour</td><td>45 µg/m³</td><td>100 µg/m³</td></tr>
     </table>
 </section>
 
-<!-- HEALTH EFFECTS -->
-<section>
-    <h2>Health Effects of Air Pollution</h2>
-    <ul>
-        <li><strong>Lungs:</strong> Cough, wheeze, asthma attacks, reduced lung growth in children.</li>
-        <li><strong>Heart:</strong> Higher risk of heart attack, stroke, high blood pressure.</li>
-        <li><strong>Brain:</strong> Headache, fatigue, reduced concentration; long-term links to dementia.</li>
-        <li><strong>Pregnancy:</strong> Low birth weight, preterm birth, complications.</li>
-        <li><strong>Children & Elderly:</strong> More hospital visits, more days of illness.</li>
-    </ul>
-</section>
-
-<!-- CO2 & CLIMATE CHANGE -->
-<section>
-    <h2>CO₂, Fossil Fuels & Climate Change</h2>
-    <p>
-        The same activities that cause local air pollution—burning diesel, petrol, coal, and waste—also release
-        carbon dioxide (CO₂), a greenhouse gas that drives climate change.
-    </p>
-    <ul>
-        <li><strong>More CO₂ → Warming planet:</strong> Heatwaves, heavy rainfall, floods, and sea-level rise.</li>
-        <li><strong>Heat + Pollution:</strong> Hot days trap pollutants near the ground, making breathing even harder.</li>
-        <li><strong>Co-benefit:</strong> Cutting fossil fuel use improves both <em>health now</em> and <em>climate in future</em>.</li>
-    </ul>
+<!-- HEALTH IMPACTS -->
+<section style="padding:20px; background:#e8f7f0; border-radius:10px; margin:20px 0;">
+  <h2>Health Impacts of PM2.5</h2>
+  <ul>
+    <li><strong>Breathing & Lungs:</strong> Breathing difficulty, asthma attacks, coughing, wheezing, and reduced lung function. Long-term exposure can slow lung growth in children.</li>
+    <li><strong>Heart & Blood Vessels:</strong> Increased risk of heart disease, high blood pressure, heart attacks, and stroke.</li>
+    <li><strong>Brain & Nervous System:</strong> Headaches, fatigue, reduced concentration, and long-term links to dementia.</li>
+    <li><strong>Pregnancy:</strong> Higher risk of low birth weight, preterm birth, and pregnancy complications.</li>
+    <li><strong>Life Expectancy:</strong> Long-term exposure can reduce overall lifespan.</li>
+    <li><strong>Children & Elderly:</strong> More hospital visits, more days of illness, and greater vulnerability.</li>
+  </ul>
 </section>
 
 <!-- WHAT EVERYONE CAN DO -->
 <section>
     <h2>What Everyone Can Do</h2>
     <ul>
-        <li><strong>Travel:</strong> Walk, cycle, or use public transport when possible; share rides.</li>
-        <li><strong>At Home:</strong> Avoid burning waste, wood, or plastic; use LPG or clean cooking options.</li>
-        <li><strong>Energy:</strong> Switch off lights and fans when not needed; support rooftop solar.</li>
-        <li><strong>Green Spaces:</strong> Plant and protect trees; support urban green corridors.</li>
-        <li><strong>Community:</strong> Ask schools, offices, and local leaders to monitor AQI and act on bad-air days.</li>
+        <li>Walk, cycle, or use public transport; share rides.</li>
+        <li>Avoid burning waste; use clean cooking options.</li>
+        <li>Save energy; support rooftop solar.</li>
+        <li>Plant and protect trees.</li>
+        <li>Check AQI before outdoor activities.</li>
+        <li>Wear N95 masks on high pollution days.</li>
     </ul>
-    <p style="font-weight:bold; font-size:0.95rem;">
-        Cleaner air = fewer hospital visits, healthier children, and a safer climate for Kochi.
-    </p>
+</section>
+
+<!-- CO2 & CLIMATE -->
+<section>
+    <h2>CO₂, Fossil Fuels & Climate Change</h2>
+    <p>The same activities that cause local air pollution also release CO₂, driving climate change.</p>
+    <ul>
+        <li>More CO₂ → Heatwaves, floods, sea-level rise.</li>
+        <li>Hot days trap pollutants near the ground.</li>
+        <li>Cutting fossil fuels improves health now and climate later.</li>
+    </ul>
 </section>
 
 </main>
 
-<!-- SIMPLE PM2.5 TREND CHART (NO EXTERNAL LIBRARY) -->
+<!-- SIMPLE CHART -->
 <script>
-    // Very simple bar chart using Canvas API (no external JS)
-    const canvas = document.getElementById('pmChart');
-    const ctx = canvas.getContext('2d');
+const canvas = document.getElementById('pmChart');
+const ctx = canvas.getContext('2d');
+const labels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const values = [35,52,78,60,90,110,70];
+const maxValue = Math.max(...values,120);
+const padding = 30;
+const width = canvas.width;
+const height = canvas.height;
+const barWidth = (width - 2 * padding) / values.length * 0.6;
+const gap = (width - 2 * padding) / values.length * 0.4;
 
-    // Example data – replace with real PM2.5 values if you have them
-    const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    const values = [35, 52, 78, 60, 90, 110, 70]; // µg/m³
+function drawChart() {
+    ctx.clearRect(0,0,width,height);
+    ctx.font = '10px Arial';
+    ctx.textAlign = 'center';
+    ctx.beginPath();
+    ctx.moveTo(padding,10);
+    ctx.lineTo(padding,height-padding);
+    ctx.lineTo(width-padding,height-padding);
+    ctx.strokeStyle = '#555';
+    ctx.stroke();
 
-    const maxValue = Math.max(...values, 120);
-    const padding = 30;
-    const width = canvas.width;
-    const height = canvas.height;
-    const barWidth = (width - 2 * padding) / values.length * 0.6;
-    const gap = (width - 2 * padding) / values.length * 0.4;
-
-    function drawChart() {
-        ctx.clearRect(0, 0, width, height);
-        ctx.font = '10px Arial';
-        ctx.textAlign = 'center';
-
-        // Axes
-        ctx.beginPath();
-        ctx.moveTo(padding, 10);
-        ctx.lineTo(padding, height - padding);
-        ctx.lineTo(width - padding, height - padding);
-        ctx.strokeStyle = '#555';
-        ctx.stroke();
-
-        // Bars
-        values.forEach((v, i) => {
-            const x = padding + i * (barWidth + gap) + gap / 2;
-            const barHeight = (v / maxValue) * (height - 2 * padding);
-            const y = height - padding - barHeight;
-
-            // Color by level
-            let color = '#2ecc71';
-            if (v > 50 && v <= 100) color = '#f1c40f';
-            else if (v > 100 && v <= 150) color = '#e67e22';
-            else if (v > 150 && v <= 200) color = '#c0392b';
-            else if (v > 200) color = '#6c3483';
-
-            ctx.fillStyle = color;
-            ctx.fillRect(x, y, barWidth, barHeight);
-
-            // Label
-            ctx.fillStyle = '#000';
-            ctx.fillText(labels[i], x + barWidth / 2, height - padding + 12);
-        });
-    }
-
-    drawChart();
+    values.forEach((v,i)=>{
+        const x = padding + i*(barWidth+gap) + gap/2;
+        const barHeight = (v/maxValue)*(height-2*padding);
+        const y = height-padding-barHeight;
+        let color = '#2ecc71';
+        if(v>50&&v<=100) color='#f1c40f';
+        else if(v>100&&v<=150) color='#e67e22';
+        else if(v>150&&v<=200) color='#c0392b';
+        else if(v>200) color='#6c3483';
+        ctx.fillStyle=color;
+        ctx.fillRect(x,y,barWidth,barHeight);
+        ctx.fillStyle='#000';
+        ctx.fillText(labels[i],x+barWidth/2,height-padding+12);
+    });
+}
+drawChart();
 </script>
 
 <div class="footer">

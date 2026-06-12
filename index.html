@@ -2,145 +2,95 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Breath Kochi – Air Quality Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Breath Kochi – Air Quality Dashboard</title>
+
 <style>
-  body {
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
-    color: #1d1d1d;
-    line-height: 1.55;
-    transition: background 0.3s ease;
-  }
 
-  h1, h2, h3 {
-    font-weight: 600;
-    letter-spacing: -0.3px;
-  }
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  margin:0;
+  padding:0;
+  background:linear-gradient(135deg,#e8f5e9,#c8e6c9);
+  color:#1d1d1d;
+  line-height:1.55;
+}
 
-  header {
-    background: rgba(0, 100, 60, 0.85);
-    color: white;
-    padding: 32px 20px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    animation: fadeIn 1s ease;
-  }
+h1,h2,h3 {
+  font-weight:600;
+}
 
-  header h1 {
-    margin: 0;
-    font-size: 2rem;
-  }
+header {
+  background:rgba(0,100,60,0.85);
+  color:white;
+  padding:32px 20px;
+  text-align:center;
+}
 
-  header p {
-    margin: 6px 0 0;
-    font-size: 1rem;
-    opacity: 0.95;
-  }
+header h1 {
+  margin:0;
+}
 
-  main {
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+main {
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
 
-  /* 🌿 GLASS CARD STYLE */
-  section {
-    background: rgba(255, 255, 255, 0.82);
-    padding: 24px 28px;
-    margin: 20px 0;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    animation: slideUp 0.6s ease;
-  }
+section {
+  background:rgba(255,255,255,0.85);
+  padding:24px;
+  margin:20px 0;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
 
-  .two-column {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+.two-column {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
 
-  .col {
-    flex: 1 1 260px;
-  }
+.col {
+  flex:1 1 260px;
+}
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
-    font-size: 0.9rem;
-  }
+table {
+  width:100%;
+  border-collapse:collapse;
+}
 
-  th, td {
-    border: 1px solid rgba(0,0,0,0.15);
-    padding: 10px;
-    text-align: center;
-    background: rgba(255,255,255,0.6);
-  }
+th,td {
+  border:1px solid #999;
+  padding:10px;
+  text-align:center;
+}
 
-  th {
-    background: rgba(200, 230, 201, 0.8);
-  }
+th {
+  background:#c8e6c9;
+}
 
-  ul { padding-left: 20px; margin: 10px 0; }
+#langToggle {
+  position:fixed;
+  right:20px;
+  top:20px;
+  background:#00643c;
+  color:white;
+  padding:10px 15px;
+  border-radius:10px;
+  cursor:pointer;
+  z-index:1000;
+}
 
-  .footer {
-    text-align: center;
-    padding: 25px;
-    font-size: 0.9rem;
-    color: #2e7d32;
-  }
+.footer {
+  text-align:center;
+  padding:25px;
+  color:#2e7d32;
+}
 
-  /* Floating AQI Alert */
-  #aqiAlert {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 100, 60, 0.85);
-    color: white;
-    padding: 14px 18px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    font-size: 0.95rem;
-    backdrop-filter: blur(8px);
-    z-index: 999;
-    animation: fadeIn 1s ease;
-  }
-
-  /* Language Toggle */
-  #langToggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(0, 100, 60, 0.9);
-    color: white;
-    padding: 10px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    z-index: 999;
-    backdrop-filter: blur(8px);
-    animation: fadeIn 1s ease;
-  }
-
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
 </style>
+
 </head>
 
 <body>
@@ -148,256 +98,404 @@
 <div id="langToggle">മലയാളം</div>
 
 <header>
-  <h1 id="pageTitle">Breath Kochi – Air Quality Dashboard</h1>
-  <p id="pageSubtitle">By Amala Xavier • Aerosol & Inhalation Scientist</p>
+<h1 id="pageTitle">
+Breath Kochi – Air Quality Dashboard
+</h1>
+
+<p id="pageSubtitle">
+By Amala Xavier • Aerosol & Inhalation Scientist
+</p>
+
 </header>
+
 
 <main>
 
-<!-- 🌿 ENGLISH VERSION -->
+
 <div id="enContent">
 
-  <section>
-    <h2>Why Air Quality in Kochi Matters</h2>
-    <p>
-      Kochi’s air contains microscopic particles like PM2.5 that can affect the lungs, heart, brain, and long‑term health.
-      This dashboard connects live AQI data with clear, science‑based explanations and practical actions for daily life.
-    </p>
-  </section>
 
-  <section>
-    <h2>Live AQI – Ernakulam</h2>
-    <iframe 
-      src="https://www.aqi.in/dashboard/india/kerala/ernakulam"
-      style="width:100%; height:750px; border:none; border-radius:16px;">
-    </iframe>
-  </section>
+<section>
+<h2>Why Air Quality in Kochi Matters</h2>
 
-  <section class="two-column">
-    <div class="col">
-      <h2>What is PM2.5?</h2>
-      <p>
-        PM2.5 are fine particles 30 times thinner than a human hair. They enter deep into the lungs and sometimes the bloodstream.
-      </p>
-      <p>
-        Long‑term exposure increases risks of heart disease, stroke, lung disease, and reduced life expectancy.
-      </p>
-    </div>
-    <div class="col">
-      <h3>How Small is PM2.5?</h3>
-      <ul>
-        <li>Human hair: ~70 µm</li>
-        <li>Sand grain: ~90 µm</li>
-        <li>PM10: 10 µm</li>
-        <li><strong>PM2.5: 2.5 µm</strong></li>
-      </ul>
-    </div>
-  </section>
+<p>
+Kochi’s air contains microscopic particles like PM2.5 that can affect the lungs,
+heart, brain, and long-term health.
+This dashboard connects AQI data with science-based explanations and practical actions.
+</p>
 
-  <section>
-    <h2>WHO vs Indian Standards for PM2.5</h2>
-    <table>
-      <tr><th>Pollutant</th><th>Duration</th><th>WHO</th><th>India</th></tr>
-      <tr><td>PM2.5</td><td>Annual</td><td>5 µg/m³</td><td>40 µg/m³</td></tr>
-      <tr><td>PM2.5</td><td>24‑hour</td><td>15 µg/m³</td><td>60 µg/m³</td></tr>
-    </table>
-  </section>
+</section>
 
-  <!-- ⭐ UPDATED HEALTH IMPACTS (ALL COMBINED) -->
-  <section>
-    <h2>Health Impacts of PM2.5</h2>
-    <ul>
-      <li><strong>Lungs:</strong> asthma, chronic cough, reduced lung growth in children.</li>
-      <li><strong>Heart:</strong> higher risk of heart attack, stroke, hypertension.</li>
-      <li><strong>Brain & Cognition:</strong> headaches, fatigue, reduced concentration, slower decision‑making, long‑term cognitive decline.</li>
-      <li><strong>Pregnancy:</strong> preterm birth, low birth weight, developmental issues.</li>
-      <li><strong>Children:</strong> reduced lung development, more infections, learning difficulties.</li>
-      <li><strong>Elderly:</strong> worsening of existing heart/lung diseases, higher hospitalization risk.</li>
-    </ul>
-  </section>
 
-  <section>
-    <h2>Pollution Hotspots in Kochi</h2>
-    <ul>
-      <li>Kalamassery & Eloor – industrial belt</li>
-      <li>Edappally & Vyttila – traffic congestion</li>
-      <li>MG Road – commercial corridor</li>
-      <li>Container Road – heavy trucks</li>
-      <li>Kakkanad – IT hub + construction dust</li>
-    </ul>
-  </section>
+<section>
 
-  <section>
-    <h2>How to Reduce Your Exposure</h2>
-    <ul>
-      <li>Use public transport or carpool.</li>
-      <li>Avoid burning waste.</li>
-      <li>Use HEPA filters at home and in cars.</li>
-      <li>Check AQI before outdoor exercise.</li>
-      <li>Wear N95 masks on bad days.</li>
-    </ul>
-  </section>
+<h2>Live AQI – Ernakulam</h2>
 
-  <section>
-    <h2>Indoor Air Quality</h2>
-    <ul>
-      <li>Use HEPA air purifiers.</li>
-      <li>Ventilate when AQI is good.</li>
-      <li>Avoid incense and indoor smoking.</li>
-      <li>Clean AC and purifier filters regularly.</li>
-    </ul>
-  </section>
+<iframe
+src="https://www.aqi.in/dashboard/india/kerala/ernakulam"
+style="width:100%;height:750px;border:none;border-radius:16px;">
+</iframe>
 
-  <section>
-    <h2>Nature‑Based Solutions – Algae Bioreactors</h2>
-    <p>
-      Algae bioreactors absorb CO₂ and release oxygen. They are being explored as low‑energy, nature‑based solutions for cleaner air.
-    </p>
-  </section>
+</section>
 
-  <section>
-    <h2>Kochi 2030 – Clean Air Vision</h2>
-    <ul>
-      <li>More green corridors.</li>
-      <li>Electric buses.</li>
-      <li>Safe cycling lanes.</li>
-      <li>Cleaner industries.</li>
-      <li>No Idling (>60seconds).</li>
-      <li>More AQI monitoring stations.</li>
-      
-    </ul>
-  </section>
 
-  <section>
-    
-    <p>
-      <strong>Amala Xavier</strong><br>
-      Aerosol & Inhalation Scientist<br>
-      Focused on clean air, respiratory health, and environmental awareness.
-    </p>
-  </section>
+<section class="two-column">
+
+<div class="col">
+
+<h2>What is PM2.5?</h2>
+
+<p>
+PM2.5 are tiny particles smaller than 2.5 micrometers.
+They can reach deep inside the lungs and sometimes enter the bloodstream.
+</p>
 
 </div>
 
-<!-- 🌿 MALAYALAM VERSION -->
+
+<div class="col">
+
+<h3>Particle Size Comparison</h3>
+
+<ul>
+<li>Human hair: ~70 µm</li>
+<li>Sand grain: ~90 µm</li>
+<li>PM10: 10 µm</li>
+<li><b>PM2.5: 2.5 µm</b></li>
+</ul>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>WHO vs Indian Standards for PM2.5</h2>
+
+<table>
+
+<tr>
+<th>Pollutant</th>
+<th>Duration</th>
+<th>WHO</th>
+<th>India</th>
+</tr>
+
+<tr>
+<td>PM2.5</td>
+<td>Annual</td>
+<td>5 µg/m³</td>
+<td>40 µg/m³</td>
+</tr>
+
+<tr>
+<td>PM2.5</td>
+<td>24-hour</td>
+<td>15 µg/m³</td>
+<td>60 µg/m³</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<section>
+
+<h2>Health Impacts of PM2.5</h2>
+
+<ul>
+
+<li><b>Lungs:</b> asthma, cough, reduced lung development.</li>
+
+<li><b>Heart:</b> increased risk of heart disease and stroke.</li>
+
+<li><b>Brain:</b> fatigue, reduced concentration, cognitive effects.</li>
+
+<li><b>Pregnancy:</b> premature birth and low birth weight risks.</li>
+
+<li><b>Children:</b> infections and reduced lung growth.</li>
+
+<li><b>Elderly:</b> worsening heart and lung diseases.</li>
+
+</ul>
+
+</section>
+
+
+<section>
+
+<h2>Pollution Hotspots in Kochi</h2>
+
+<ul>
+
+<li>Kalamassery & Eloor – Industrial area</li>
+<li>Edappally & Vyttila – Traffic congestion</li>
+<li>MG Road – Commercial area</li>
+<li>Container Road – Heavy vehicles</li>
+<li>Kakkanad – Construction dust</li>
+
+</ul>
+
+</section>
+<section>
+
+<h2>How to Reduce Your Exposure</h2>
+
+<ul>
+<li>Use public transport or carpool.</li>
+<li>Avoid burning waste.</li>
+<li>Use HEPA filters at home and in cars.</li>
+<li>Check AQI before outdoor exercise.</li>
+<li>Wear N95 masks on polluted days.</li>
+</ul>
+
+</section>
+
+
+<section>
+
+<h2>Indoor Air Quality</h2>
+
+<ul>
+<li>Use HEPA air purifiers.</li>
+<li>Ventilate when AQI is good.</li>
+<li>Avoid incense and indoor smoking.</li>
+<li>Clean AC and purifier filters regularly.</li>
+</ul>
+
+</section>
+
+
+<section>
+
+<h2>Nature-Based Solutions – Algae Bioreactors</h2>
+
+<p>
+Algae bioreactors absorb carbon dioxide and release oxygen.
+They are being explored as low-energy nature-based solutions for cleaner air.
+</p>
+
+</section>
+
+
+<section>
+
+<h2>Kochi 2030 – Clean Air Vision</h2>
+
+<ul>
+<li>More green corridors.</li>
+<li>Electric buses.</li>
+<li>Safe cycling lanes.</li>
+<li>Cleaner industries.</li>
+<li>No vehicle idling for more than 60 seconds.</li>
+<li>More AQI monitoring stations.</li>
+</ul>
+
+</section>
+
+
+<section>
+
+<p>
+
+<b>Amala Xavier</b><br>
+Aerosol & Inhalation Scientist<br>
+Focused on clean air, respiratory health, and environmental awareness.
+
+</p>
+
+</section>
+
+
+</div>
+
+
+<!-- MALAYALAM CONTENT -->
+
 <div id="mlContent" style="display:none;">
 
-  <section>
-    <h2>കൊച്ചിയിലെ വായു ഗുണനിലവാരം എന്തുകൊണ്ട് പ്രധാനമാണ്?</h2>
-    <p>
-      കൊച്ചിയിലെ വായുവിൽ PM2.5 പോലുള്ള സൂക്ഷ്മകണങ്ങൾ അടങ്ങിയിരിക്കുന്നു. ഇവ ശ്വാസകോശം, ഹൃദയം, മസ്തിഷ്കം,
-      ദീർഘകാല ആരോഗ്യനില എന്നിവയെ ബാധിക്കാം. ഈ ഡാഷ്ബോർഡ് ലൈവ് AQI ഡാറ്റയും ലളിതമായ ശാസ്ത്രീയ വിവരങ്ങളും
-      ഒരുമിച്ച് ചേർത്ത് ദിവസേന ഉപയോഗിക്കാവുന്ന മാർഗനിർദ്ദേശം നൽകുന്നു.
-    </p>
-  </section>
 
-  <section>
-    <h2>ലൈവ് AQI – എറണാകുളം</h2>
-    <iframe 
-      src="https://www.aqi.in/dashboard/india/kerala/ernakulam"
-      style="width:100%; height:750px; border:none; border-radius:16px;">
-    </iframe>
-  </section>
+<section>
 
-  <section class="two-column">
-    <div class="col">
-      <h2>PM2.5 എന്താണ്?</h2>
-      <p>
-        2.5 മൈക്രോമീറ്ററിൽ താഴെയുള്ള വളരെ ചെറിയ പൊടിക്കണങ്ങളെയാണ് PM2.5 എന്ന് വിളിക്കുന്നത്.
-        ഇവ ശ്വാസകോശത്തിന്റെ ആഴത്തിൽ എത്തുകയും ചിലപ്പോൾ രക്തത്തിൽ കലരുകയും ചെയ്യാം.
-      </p>
-    </div>
-    <div class="col">
-      <h3>PM2.5 എത്ര ചെറുതാണ്?</h3>
-      <ul>
-        <li>മനുഷ്യന്റെ മുടി: ~70 µm</li>
-        <li>മണൽ കണം: ~90 µm</li>
-        <li>PM10: 10 µm</li>
-        <li><strong>PM2.5: 2.5 µm</strong></li>
-      </ul>
-    </div>
-  </section>
+<h2>കൊച്ചിയിലെ വായു ഗുണനിലവാരം എന്തുകൊണ്ട് പ്രധാനമാണ്?</h2>
 
-  <section>
-    <h2>WHO vs ഇന്ത്യാ സ്റ്റാൻഡേർഡുകൾ (PM2.5)</h2>
-    <table>
-      <tr><th>മലിനീകരണം</th><th>ദൈർഘ്യം</th><th>WHO</th><th>ഇന്ത്യ</th></tr>
-      <tr><td>PM2.5</td><td>വാർഷികം</td><td>5 µg/m³</td><td>40 µg/m³</td></tr>
-      <tr><td>PM2.5</td><td>24 മണിക്കൂർ</td><td>15 µg/m³</td><td>60 µg/m³</td></tr>
-    </table>
-  </section>
+<p>
+കൊച്ചിയിലെ വായുവിൽ PM2.5 പോലുള്ള സൂക്ഷ്മകണങ്ങൾ അടങ്ങിയിരിക്കുന്നു.
+ഇവ ശ്വാസകോശം, ഹൃദയം, മസ്തിഷ്കം എന്നിവയെ ബാധിക്കുകയും ദീർഘകാല ആരോഗ്യ പ്രശ്നങ്ങൾ ഉണ്ടാക്കുകയും ചെയ്യാം.
+</p>
 
-  <!-- ⭐ UPDATED MALAYALAM HEALTH IMPACTS -->
-  <section>
-    <h2>PM2.5 ആരോഗ്യത്തെ എങ്ങനെ ബാധിക്കുന്നു?</h2>
-    <ul>
-      <li><strong>ശ്വാസകോശം:</strong> ആസ്ത്മ, സ്ഥിരമായ ചുമ, കുട്ടികളിൽ ശ്വാസകോശ വളർച്ച കുറയൽ.</li>
-      <li><strong>ഹൃദയം:</strong> ഹൃദയാഘാതം, സ്ട്രോക്ക്, രക്തസമ്മർദ്ദം ഉയരൽ.</li>
-      <li><strong>മസ്തിഷ്കവും ചിന്താശേഷിയും:</strong> തലവേദന, ക്ഷീണം, ശ്രദ്ധ കുറയൽ, തീരുമാനമെടുക്കൽ മന്ദഗതി, ദീർഘകാലത്തിൽ ഓർമ്മശക്തി കുറയൽ.</li>
-      <li><strong>ഗർഭധാരണം:</strong> പ്രീടേം ഡെലിവറി, കുറഞ്ഞ ജനനഭാരം, കുഞ്ഞിന്റെ വളർച്ചയിലും വികസനത്തിലും പ്രശ്നങ്ങൾ.</li>
-      <li><strong>കുട്ടികൾ:</strong> ശ്വാസകോശ വളർച്ച കുറയൽ, കൂടുതൽ അണുബാധകൾ, പഠനക്ഷമത കുറയൽ.</li>
-      <li><strong>മുതിർന്നവർ:</strong> ഹൃദയ‑ശ്വാസകോശ രോഗങ്ങൾ വഷളാകൽ, കൂടുതൽ ആശുപത്രി പ്രവേശനം.</li>
-    </ul>
-  </section>
+</section>
 
-  <section>
-    <h2>കൊച്ചിയിലെ മലിനീകരണ ഹോട്ട്‌സ്‌പോട്ടുകൾ</h2>
-    <ul>
-      <li>കലമശ്ശേരി, ഈലൂർ – വ്യവസായ മേഖല</li>
-      <li>എടപ്പള്ളി, വൈറ്റില – ട്രാഫിക്</li>
-      <li>എം.ജി റോഡ് – വ്യാപാര മേഖല</li>
-      <li>കണ്ടെയ്‌നർ റോഡ് – ഭാരവാഹനങ്ങൾ</li>
-      <li>കാക്കനാട് – ഐ.ടി + കൺസ്ട്രക്ഷൻ പൊടി</li>
-    </ul>
-  </section>
 
-  <section>
-    <h2>നിങ്ങൾ ചെയ്യാവുന്ന കാര്യങ്ങൾ</h2>
-    <ul>
-      <li>ബസ്, മെട്രോ, ഷെയർ വാഹനങ്ങൾ ഉപയോഗിക്കുക.</li>
-      <li>മാലിന്യം കത്തിക്കുന്നത് ഒഴിവാക്കുക.</li>
-      <li>HEPA ഫിൽറ്റർ ഉപയോഗിക്കുക.</li>
-      <li>AQI പരിശോധിക്കുക.</li>
-      <li>N95 മാസ്ക് ധരിക്കുക.</li>
-    </ul>
-  </section>
+<section>
 
-  <section>
-    <h2>വീട്ടിനുള്ളിലെ ശുദ്ധവായു</h2>
-    <ul>
-      <li>HEPA എയർ പ്യൂരിഫയർ ഉപയോഗിക്കുക.</li>
-      <li>AQI നല്ലപ്പോൾ ജനൽ തുറക്കുക.</li>
-      <li>അഗർബത്തി, സ്മോക്കിംഗ് ഒഴിവാക്കുക.</li>
-      <li>ഫിൽറ്ററുകൾ വൃത്തിയാക്കുക.</li>
-    </ul>
-  </section>
+<h2>ലൈവ് AQI – എറണാകുളം</h2>
 
-  <section>
-    <h2>ആൽഗി ബയോറിയാക്ടർ – പ്രകൃതിയോട് ചേർന്ന പരിഹാരം</h2>
-    <p>
-      ആൽഗി CO₂ ആഗിരണം ചെയ്ത് ഓക്സിജൻ നൽകുന്നു. കുറഞ്ഞ ഊർജ്ജ ഉപയോഗത്തോടെ വായു ശുദ്ധീകരണത്തിനുള്ള
-      പ്രകൃതി അധിഷ്ഠിത പരിഹാരമാണ് ഇത്.
-    </p>
-  </section>
+<iframe
+src="https://www.aqi.in/dashboard/india/kerala/ernakulam"
+style="width:100%;height:750px;border:none;border-radius:16px;">
+</iframe>
 
-  <section>
-    <h2>കൊച്ചി 2030 – ശുദ്ധവായു ദൃശ്യം</h2>
-    <ul>
-      <li>കൂടുതൽ വൃക്ഷങ്ങൾ.</li>
-      <li>ഇലക്ട്രിക് ബസുകൾ.</li>
-      <li>സൈക്കിൾ പാതകൾ.</li>
-      <li>വ്യവസായ മലിനീകരണ നിയന്ത്രണം.</li>
-      <li>കൂടുതൽ AQI സ്റ്റേഷനുകൾ.</li>
-    </ul>
-  </section>
+</section>
 
-  <section>
-    <h2>ശാസ്ത്രജ്ഞയെ കുറിച്ച്</h2>
-    <p>
-      <strong>അമല സേവ്യർ</strong><br>
-      എറോസോൾ & ഇൻഹലേഷൻ സയന്റിസ്റ്റ്<br>
-      ശുദ്ധവായുവിനും ആരോഗ്യത്തിനും വേണ്ടി പ്രവർത്തിക്കുന്നു.
-    </p>
-  </section>
 
-</
+<section class="two-column">
+
+<div class="col">
+
+<h2>PM2.5 എന്താണ്?</h2>
+
+<p>
+2.5 മൈക്രോമീറ്ററിൽ താഴെയുള്ള വളരെ ചെറിയ വായു മലിനീകരണ കണങ്ങളെയാണ് PM2.5 എന്ന് വിളിക്കുന്നത്.
+ഇവ ശ്വാസകോശത്തിന്റെ ആഴത്തിൽ എത്താം.
+</p>
+
+</div>
+
+
+<div class="col">
+
+<h3>PM2.5 എത്ര ചെറുതാണ്?</h3>
+
+<ul>
+<li>മനുഷ്യന്റെ മുടി: ~70 µm</li>
+<li>മണൽ കണം: ~90 µm</li>
+<li>PM10: 10 µm</li>
+<li><b>PM2.5: 2.5 µm</b></li>
+</ul>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>WHO vs ഇന്ത്യാ PM2.5 മാനദണ്ഡങ്ങൾ</h2>
+
+<table>
+
+<tr>
+<th>മലിനീകരണം</th>
+<th>കാലയളവ്</th>
+<th>WHO</th>
+<th>ഇന്ത്യ</th>
+</tr>
+
+<tr>
+<td>PM2.5</td>
+<td>വാർഷികം</td>
+<td>5 µg/m³</td>
+<td>40 µg/m³</td>
+</tr>
+
+<tr>
+<td>PM2.5</td>
+<td>24 മണിക്കൂർ</td>
+<td>15 µg/m³</td>
+<td>60 µg/m³</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<section>
+
+<h2>PM2.5 ആരോഗ്യത്തെ എങ്ങനെ ബാധിക്കുന്നു?</h2>
+
+<ul>
+
+<li>
+<b>ശ്വാസകോശം:</b>
+ആസ്ത്മ, ചുമ, കുട്ടികളിൽ ശ്വാസകോശ വളർച്ച കുറയൽ.
+</li>
+
+<li>
+<b>ഹൃദയം:</b>
+ഹൃദയാഘാതം, സ്ട്രോക്ക്, ഉയർന്ന രക്തസമ്മർദ്ദം.
+</li>
+
+<li>
+<b>മസ്തിഷ്കം:</b>
+തലവേദന, ക്ഷീണം, ശ്രദ്ധ കുറയൽ, ചിന്താശേഷി കുറയൽ.
+</li>
+
+<li>
+<b>ഗർഭധാരണം:</b>
+പ്രീടേം ജനനം, കുറഞ്ഞ ജനനഭാരം.
+</li>
+
+<li>
+<b>കുട്ടികൾ:</b>
+ശ്വാസകോശ വളർച്ചയും പഠന ശേഷിയും ബാധിക്കാം.
+</li>
+
+<li>
+<b>മുതിർന്നവർ:</b>
+ഹൃദയ-ശ്വാസകോശ രോഗങ്ങൾ വഷളാകാം.
+</li>
+
+</ul>
+
+</section>
+
+
+<section>
+
+<h2>കൊച്ചിയിലെ മലിനീകരണ ഹോട്ട്‌സ്‌പോട്ടുകൾ</h2>
+
+<ul>
+
+<li>കലമശ്ശേരി & ഈലൂർ – വ്യവസായ മേഖല</li>
+<li>എടപ്പള്ളി & വൈറ്റില – ട്രാഫിക്</li>
+<li>എം.ജി റോഡ് – വ്യാപാര മേഖല</li>
+<li>കണ്ടെയ്‌നർ റോഡ് – ഭാരവാഹനങ്ങൾ</li>
+<li>കാക്കനാട് – നിർമ്മാണ പൊടി</li>
+
+</ul>
+
+</section>
+  </div> <!-- end mlContent -->
+
+</main>
+
+<div class="footer">
+  © Breath Kochi – Clean Air Awareness
+</div>
+
+<script>
+  const langToggle = document.getElementById("langToggle");
+  const enContent = document.getElementById("enContent");
+  const mlContent = document.getElementById("mlContent");
+  const pageTitle = document.getElementById("pageTitle");
+  const pageSubtitle = document.getElementById("pageSubtitle");
+
+  let isMalayalam = false;
+
+  langToggle.addEventListener("click", function () {
+    isMalayalam = !isMalayalam;
+
+    if (isMalayalam) {
+      enContent.style.display = "none";
+      mlContent.style.display = "block";
+      langToggle.innerText = "English";
+
+      pageTitle.innerText = "Breath Kochi – വായു ഗുണനിലവാര ഡാഷ്ബോർഡ്";
+      pageSubtitle.innerText = "അമല സേവ്യർ • എറോസോൾ & ഇൻഹലേഷൻ സയന്റിസ്റ്റ്";
+    } else {
+      enContent.style.display = "block";
+      mlContent.style.display = "none";
+      langToggle.innerText = "മലയാളം";
+
+      pageTitle.innerText = "Breath Kochi – Air Quality Dashboard";
+      pageSubtitle.innerText = "By Amala Xavier • Aerosol & Inhalation Scientist";
+    }
+  });
+</script>
+
+</body>
+</html>
